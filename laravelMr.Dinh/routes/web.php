@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalculaterController;
+use App\Http\Controllers\CovidController;
 use App\Http\Controllers\PostController;
 use Brick\Math\Internal\Calculator;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,9 @@ Route::get('/create',[PostController::class, 'create']);
 
 Route::post('/store',[PostController::class, 'store']);
 
-
+//Signup
 Route::get('/signup', [SignupController::class, 'index']);
 Route::post('/signup', [SignupController::class, 'displayInfo']);
+
+//Covid
+Route::get('/covid', [CovidController::class, 'getData']);
