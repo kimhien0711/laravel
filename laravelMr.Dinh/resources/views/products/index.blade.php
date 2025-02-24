@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
@@ -17,10 +18,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Tên</th>
-                    <th>Mô tả</th>
-                    <th>Gía</th>
-                    <th>Số lượng</th>
-                    <th>Hành động</th>
+                    <th>Avatar</th>
+                    <th>created At</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +27,7 @@
                 <tr>
                     <td>{{ $product['id'] }}</td>    
                     <td>{{ $product['name'] }}</td>
-                    <td>{{ $product['avatar'] }}</td>
+                    <td><img src="{{ $product['avatar'] }}" alt="avatar"></td>
                     <td>{{ $product['createdAt'] }}</td>
                     <td>
                         <a href="{{ route('products.edit', $product['id']) }}" class="btn btn-warning btn-sm">Sửa</a>

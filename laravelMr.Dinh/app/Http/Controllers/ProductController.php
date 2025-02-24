@@ -22,6 +22,9 @@ class ProductController extends Controller
 
     // Lưu sản phẩm mới
     public function store(StoreProductRequest $request){
+        $validatedData = $request->validated();
+        $validatedData['createdAt'] = now()-> toIso8601String();
+        
         $response = Http::post($this->apiUrl, $request->validated());
         if ($response->successful()) {
             return redirect()->route('products.index')->with('success', 'Sản phẩm đã được tạo!');

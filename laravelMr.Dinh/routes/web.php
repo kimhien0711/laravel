@@ -7,6 +7,7 @@ use Brick\Math\Internal\Calculator;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +50,5 @@ Route::get('/covid', [CovidController::class, 'getData']);
 
 //product
 Route::resource('products', ProductController::class);
+
+Route::get('/showproducts', [ProductsController::class, 'index'])->name('product.index');
