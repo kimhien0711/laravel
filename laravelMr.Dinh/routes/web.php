@@ -6,7 +6,7 @@ use App\Http\Controllers\PostController;
 use Brick\Math\Internal\Calculator;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +46,6 @@ Route::post('/signup', [SignupController::class, 'displayInfo']);
 
 //Covid
 Route::get('/covid', [CovidController::class, 'getData']);
+
+//product
+Route::resource('products', ProductController::class);
