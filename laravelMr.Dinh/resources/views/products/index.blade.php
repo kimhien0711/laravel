@@ -27,7 +27,7 @@
                 <tr>
                     <td>{{ $product['id'] }}</td>    
                     <td>{{ $product['name'] }}</td>
-                    <td><img src="{{ $product['avatar'] }}" alt="avatar"></td>
+                    <td><img src="{{ $product['avatar'] }}" alt="avatar" style="width:200px;"></td>
                     <td>{{ $product['createdAt'] }}</td>
                     <td>
                         <a href="{{ route('products.edit', $product['id']) }}" class="btn btn-warning btn-sm">Sửa</a>
