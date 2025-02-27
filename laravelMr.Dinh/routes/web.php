@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +53,10 @@ Route::get('/covid', [CovidController::class, 'getData']);
 Route::resource('products', ProductController::class);
 
 Route::get('/showproducts', [ProductsController::class, 'index'])->name('product.index');
+
+//master
+Route::get('/', function(){
+    return view('welcome');
+});
+
+Route::get('/index', [ PageController::class, 'getIndex']);
