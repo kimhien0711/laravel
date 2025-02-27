@@ -9,6 +9,7 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ShoppeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +61,6 @@ Route::get('/', function(){
 });
 
 Route::get('/index', [ PageController::class, 'getIndex']);
+
+//shoppe
+Route::get('/shoppe', [ ShoppeController::class, 'getIndex']);
