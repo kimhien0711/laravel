@@ -79,3 +79,5 @@ Route::get('database', function(){
     echo "Đã thực hiện lệnh tạo bảng thành công";
 });
 
+//Tạo bảng bằng Controller
+Route::get('product', [CreateTableController::class, 'createProductsTable']);
