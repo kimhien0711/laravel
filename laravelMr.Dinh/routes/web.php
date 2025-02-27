@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalculaterController;
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\CreateTableController;
 use App\Http\Controllers\PostController;
 use Brick\Math\Internal\Calculator;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ShoppeController;
+use Illuminate\Support\Facades\Schema;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,3 +67,15 @@ Route::get('/index', [ PageController::class, 'getIndex']);
 
 //shoppe
 Route::get('/shoppe', [ ShoppeController::class, 'getIndex']);
+
+//Thực hiện tạo bảng trong Database
+Route::get('database', function(){
+    Schema::create('products', function($table){
+        $table->increments('ID');
+        $table->string('Name', 200);
+        $table->float('Price');
+        $table->string('Image');
+    });
+    echo "Đã thực hiện lệnh tạo bảng thành công";
+});
+
