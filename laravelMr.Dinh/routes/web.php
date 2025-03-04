@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ShoppeController;
+use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Schema;
 
 /*
@@ -81,3 +82,5 @@ Route::get('database', function(){
 
 //Tạo bảng bằng Controller
 Route::get('product', [CreateTableController::class, 'createProductsTable']);
+
+Route::get('table', [TableController::class, 'table']);
