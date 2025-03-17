@@ -64,7 +64,7 @@ Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/index', [ PageController::class, 'getIndex']);
+// Route::get('/index', [ PageController::class, 'getIndex']);
 
 //shoppe
 Route::get('/shoppe', [ ShoppeController::class, 'getIndex']);
@@ -84,3 +84,5 @@ Route::get('database', function(){
 Route::get('product', [CreateTableController::class, 'createProductsTable']);
 
 Route::get('table', [TableController::class, 'table']);
+
+Route::get('/trangchu', [PageController::class, 'getIndex']);
